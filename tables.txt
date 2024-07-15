@@ -1,0 +1,19 @@
+create table customer
+(Cusid varchar2(10) check (Cusid like 'C%') primary key,
+ Cusname varchar2(20),
+ Cusphone number,
+ Tableid varchar2(10) references Booking(Tableid));
+ 
+ create table Booking
+(Tableid varchar2(10) check (Tableid like 'T%') primary key,
+ Tcapacity number,
+ reservation varchar2(20));
+ 
+ insert into Booking values
+ ('T1',4,'available');
+ insert into Booking values
+ ('T2',5,'available');
+ 
+ insert into customer  values('C1','seby',56664164,'T1');
+ insert into customer  values('C2','DANE',55612346,'','');
+  insert into customer  values('C3','ABIN',556764164,'','');
